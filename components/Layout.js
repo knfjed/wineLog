@@ -1,17 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
 import Header from "./Header";
+import TopImage from "./TopImage";
 import Footer from "./Footer";
 
-class Layout extends Component {
-  render() {
-    return (
-      <div>
-        <Header header={this.props.header} title={this.props.title} />
-        {this.props.children}
-        <Footer footer="copyright Kana Fujieda." />
-      </div>
-    );
-  }
-}
+const layoutStyle = {
+  margin: 0,
+  background: "beige",
+  fontFamily: "YuMincho",
+  letterSpacing: 3,
+  fontWeight: 300,
+  fontColor: "lightgray",
+};
+
+const Layout = (props) => (
+  <div style={layoutStyle}>
+    <Header />
+    {props.children}
+    <TopImage />
+    <Footer />
+  </div>
+);
 
 export default Layout;

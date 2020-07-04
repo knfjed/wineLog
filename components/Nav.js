@@ -1,17 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Nav extends Component {
-  render() {
-    return (
-      <nav>
-        <ul>
-          <li>TOP</li>
-          <li>CONCEPT</li>
-          <li>CONTACT</li>
-        </ul>
-      </nav>
-    );
-  }
-}
+const navStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "flex-end",
+  listStyle: "none",
+};
+
+const Nav = () => (
+  <nav>
+    <ul style={navStyle}>
+      <li>TOP</li>
+      <li>CONCEPT</li>
+      <li>CONTACT</li>
+    </ul>
+  </nav>
+);
 
 export default Nav;

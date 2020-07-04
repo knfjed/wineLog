@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import Nav from "./nav";
 
-class Header extends Component {
-  render() {
-    return (
-      <header>
-        <div>{this.props.header}</div>
-        <h1>{this.props.title}</h1>
-        <Nav />
-      </header>
-    );
-  }
-}
+const headerStyle = {
+  marginLeft: 16,
+  marginTop: 0,
+};
+
+const Header = () => (
+  <div style={headerStyle}>
+    <h1>WINE手帳</h1>
+    <Nav />
+  </div>
+);
 
 export default Header;
