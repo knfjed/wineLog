@@ -1,7 +1,31 @@
 import React from "react";
-import Image from "./wine.jpg";
+import Topic from "./Topic";
 
-console.log(Image);
-const TopImage = () => <img src={Image} alt="ワインの写真" />;
+const imageStyle = {
+  display: "flex",
+  width: 1000,
+  height: "auto",
+  marginTop: 50,
+  marginLeft: "auto",
+  marginRight: "auto",
+};
+
+const arrowStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: 60,
+  height: 60,
+};
+
+function TopImage() {
+  return (
+    <div>
+      <img style={imageStyle} src="/wine.jpg" alt="ワインの写真" />
+      <Topic />
+      <img style={arrowStyle} src="/arrow.svg" alt="矢印アイコン" />
+    </div>
+  );
+}
 
 export default TopImage;

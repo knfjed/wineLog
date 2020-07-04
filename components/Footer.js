@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer>
-        <div>{this.props.footer}</div>
-      </footer>
-    );
-  }
-}
+const footerStyle = {
+  textAlign: "center",
+};
+
+const Footer = () => (
+  <footer style={footerStyle}>
+    <p>Copyright 2020 Kana fujieda All Rights Reserved.</p>
+  </footer>
+);
 
 export default Footer;

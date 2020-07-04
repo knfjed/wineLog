@@ -1,3 +1,4 @@
-import Layout from "../components/Layout";
+import React from "react";
+import TopLayout from "../components/TopLayout";
 
-export default () => <Layout title="WINE手帳" />;
+export default () => <TopLayout title="WINE手帳" />;

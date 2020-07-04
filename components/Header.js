@@ -6,9 +6,14 @@ const headerStyle = {
   marginTop: 0,
 };
 
+const logoStyle = {
+  fontSize: 25,
+  fontWeight: 300,
+};
+
 const Header = () => (
   <div style={headerStyle}>
-    <h1>WINE手帳</h1>
+    <h1 style={logoStyle}>WINE手帳</h1>
     <Nav />
   </div>
 );

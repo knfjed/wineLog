@@ -12,13 +12,12 @@ const layoutStyle = {
   fontColor: "lightgray",
 };
 
-const Layout = (props) => (
+const TopLayout = () => (
   <div style={layoutStyle}>
     <Header />
-    {props.children}
     <TopImage />
     <Footer />
   </div>
 );
 
-export default Layout;
+export default TopLayout;
