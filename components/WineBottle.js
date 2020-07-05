@@ -1,9 +1,11 @@
 import React from "react";
+import Link from "next/link";
 
 const displayStyle = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  marginTop: 90,
 };
 
 const wineBottleStyle = {
@@ -14,27 +16,31 @@ const wineBottleStyle = {
 
 const soilStyle = {
   width: 150,
-  height: 300,
+  height: 250,
   backgroundColor: "burlywood",
   borderRadius: 10,
   textAlign: "center",
+  paddingTop: 40,
+  fontSize: 12,
 };
 
-function Winebottle() {
+function Winebottle({ date, name, category, taste, producer, home }) {
   return (
     <div style={displayStyle}>
-      <date>2020.7.1</date>
-      <img
-        style={wineBottleStyle}
-        src="./wineBottleIcon.svg"
-        alt="ワインボトル"
-      />
+      <date>{date}</date>
+      <a href="/wineDetail">
+        <img
+          style={wineBottleStyle}
+          src="./wineBottleIcon.svg"
+          alt="ワインボトル"
+        />
+      </a>
       <div style={soilStyle}>
-        <p>name</p>
-        <p>category</p>
-        <p>taste</p>
-        <p>producer</p>
-        <p>home</p>
+        <p>{name}</p>
+        <p>{category}</p>
+        <p>{taste}</p>
+        <p>{producer}</p>
+        <p>{home}</p>
       </div>
     </div>
   );

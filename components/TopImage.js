@@ -21,7 +21,7 @@ const arrowStyle = {
 function TopImage() {
   return (
     <div>
-      <img style={imageStyle} src="/wine.jpg" alt="ワインの写真" />
+      <img style={imageStyle} src="/topimg-wine.jpg" alt="ワインの写真" />
       <Topic />
       <img style={arrowStyle} src="/arrow.svg" alt="矢印アイコン" />
     </div>
