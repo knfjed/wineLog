@@ -16,7 +16,7 @@ const wineBottleStyle = {
 
 const soilStyle = {
   width: 150,
-  height: 250,
+  height: 200,
   backgroundColor: "burlywood",
   borderRadius: 10,
   textAlign: "center",
