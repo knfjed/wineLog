@@ -31,7 +31,9 @@ export default function WineDetailLayout({
   return (
     <div style={DetailLayoutStyle}>
       <Header />
+
       <DetailImage />
+
       <Info
         name={name}
         category={category}
@@ -41,6 +43,7 @@ export default function WineDetailLayout({
         price={price}
         url={url}
       />
+
       <Footer />
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import styled from "styled-components";
 
 const displayStyle = {
   display: "flex",
@@ -26,24 +27,39 @@ const soilStyle = {
 
 function Winebottle({ date, name, category, taste, producer, home }) {
   return (
-    <div style={displayStyle}>
+    <Root>
       <date>{date}</date>
-      <a href="/wineDetail">
-        <img
-          style={wineBottleStyle}
-          src="./wineBottleIcon.svg"
-          alt="ワインボトル"
-        />
-      </a>
+
+      <Link href={`/list/${name}`}>
+        <a>
+          <img
+            style={wineBottleStyle}
+            src="./wineBottleIcon.svg"
+            alt="ワインボトル"
+          />
+        </a>
+      </Link>
+
       <div style={soilStyle}>
         <p>{name}</p>
+
         <p>{category}</p>
+
         <p>{taste}</p>
+
         <p>{producer}</p>
+
         <p>{home}</p>
       </div>
-    </div>
+    </Root>
   );
 }
+
+const Root = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90;
+`;
 
 export default Winebottle;
