@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 import TopImage from "./TopImage";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 const layoutStyle = {
   margin: 0,

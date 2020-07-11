@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 import DetailImage from "./DetailImage";
 import Info from "./Info";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 const DetailLayoutStyle = {
   margin: 0,

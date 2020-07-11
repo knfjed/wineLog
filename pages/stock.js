@@ -1,5 +1,12 @@
 import React from "react";
-import StockLayout from "../components/StockLayout";
-const mock = [{}];
+import StockLayout from "../PageComponents/StockLayout";
+const mock = [
+  {
+    date: "2020.7.1",
+    name: "MAKASHIVILI WINE CELLAR KISI",
+    category: "white",
+    home: "Georgia",
+  },
+];
 
-export default () => <StockLayout />;
+export default (mock) => <StockLayout />;

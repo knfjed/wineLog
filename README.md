@@ -20,10 +20,10 @@
 | やりたいこと                                         | 細分化したタスク                      | 7/10(金) | 7/11(土) | 7/12(日) | 7/13(月) |
 | ---------------------------------------------------- | ------------------------------------- | -------- | -------- | -------- | -------- |
 | データを props として渡して利用できる様にする        | page コンポーネントにデータを移植     |          | ○        |          |          |
-| 　　　　　　　　　　〃                               | それぞれのページに props を渡す       |          | ○        |          |          |
+| 　　　　　　　〃                                     | それぞれのページに props を渡す       |          | ○        |          |          |
 | ダイナミックラウティングを利用してページを遷移させる | ドキュメントを読んで流れを理解        | ○        |          |          |          |
-| 　　　　　　　　　　〃                               | README に理解したことを書き出してみる | ○        |          |          |          |
-| 　　　　　　　　　　〃                               | コード書く（それぞれの                |          | ○        |          |          |
+| 　　　　　　　〃                                     | README に理解したことを書き出してみる | ○        |          |          |          |
+| 　　　　　　　〃                                     | コード書く（それぞれの                |          | ○        |          |          |
 | スタイル部分のコードを Style.js として切り分ける     |                                       |          |          |          |          |
 | イメージファイルをコンポーネント化                   |                                       |          |          |          |          |
 | コンタクトフォーム画面の作成                         |                                       |          |          |          |          |
@@ -84,6 +84,94 @@ JSX に埋め込むスタイルシート情報。
 
 そして、使いたい js ファイルで import すれば OK。
 （`import style from '../static/Style';`）
+
+## ルーティング
+
+複雑なアプリケーションでは、事前定義されたパスを使用してルートを定義するだけでは必ずしも十分ではない。
+Next.js では、ページ（[param]）に角かっこを追加して、動的ルート（別名 URL スラッグ、プリティ URL など）を作成できる。
+
+`import { useRouter } from 'next/router'`
+
+`const Post = () => {`
+`const router = useRouter()`
+`const { pid } = router.query`
+
+`return <p>Post: {pid}</p>`
+`}`
+
+`export default Post;`
+
+### 静的なルーティング
+
+Next.js はデフォルトで、ファイルシステムがルーティングとなる。
+例えば、pages 以下に置かれたファイルが pages/about.js だったとすると、
+localhost:3000/about にアクセスできるようになる。
+そしてクライアントサイドのみの遷移を実現するために、
+Next.js は<Link>というコンポーネントを用意している。
+シンプルなルーティングでは、以下のように href パラメータに href="/about"と書けば遷移できる。
+
+`import Link from 'next/link'`
+
+`export default () => (`
+`<div>`
+`Click{' '}`
+`<Link href="/about">`
+`<a>here</a>`
+`</Link>{' '}`
+`to read more`
+`</div>`
+`)`
+
+### 動的なルーティング
+
+動的なとは？
+/about/:name のようなページがパラメータを持って変化するような遷移のこと。
+
+<Link>コンポーネントには、hrefの他にasというパラメータがあり、
+ブラウザヒストリーの書き換えはasに渡された文字列で行われる。
+一方、どのページに、どんなパラメータで遷移するかをNext.js内部に知らせるには、
+下記サンプルのようなURLオブジェクトをhrefに渡す。
+pathnameはpages以下のファイル、queryの値にはクエリのオブジェクトを渡す。
+
+`import Link from 'next/link'`
+
+`export default () => (`
+`<div>`
+`Click{' '}`
+`<Link`
+`as='/about/Zeit'`
+`href={{ pathname: '/about', query: { name: 'Zeit' } }}`
+`>`
+`<a>here</a>`
+`</Link>{' '}`
+`to read more`
+`</div>`
+`)`
+
+### URL オブジェクト
+
+<Link>コンポーネントと同じように、
+Routerの関数にURLオブジェクトを渡すことで、履歴のpushとreplaceが可能。
+
+`import Router from 'next/router'`
+
+`const handler = () => {`
+`Router.push({`
+`pathname: '/about',`
+`query: { name: 'Zeit' }`
+`})`
+`}`
+
+`export default () => (`
+`<div>`
+`Click <span onClick={handler}>here</span> to read more`
+`</div>`
+`)`
+参考：https://qiita.com/tetsutaroendo/items/e444bd606c5fa79d2209
+
+#### URL オブジェクトとは？
+
+参考：https://ja.javascript.info/url
 
 ## 不明点
 
