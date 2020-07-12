@@ -2,55 +2,30 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
-const displayStyle = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  marginTop: 90,
-};
+function Winebottle(mock) {
+  console.log(mock);
 
-const wineBottleStyle = {
-  width: 100,
-  height: "auto",
-  marginTop: 20,
-};
-
-const soilStyle = {
-  width: 150,
-  height: 200,
-  backgroundColor: "burlywood",
-  borderRadius: 10,
-  textAlign: "center",
-  paddingTop: 40,
-  fontSize: 12,
-};
-
-function Winebottle({ date, name, category, taste, producer, home }) {
   return (
     <Root>
-      <date>{date}</date>
+      <date>{mock.date}</date>
 
-      <Link href={`/list/${name}`}>
+      <Link href={`/list/${mock.name}`}>
         <a>
-          <img
-            style={wineBottleStyle}
-            src="./wineBottleIcon.svg"
-            alt="ワインボトル"
-          />
+          <Img src="./wineBottleIcon.svg" alt="ワインボトル" />
         </a>
       </Link>
 
-      <div style={soilStyle}>
-        <p>{name}</p>
+      <Div>
+        <p>{mock.name}</p>
 
-        <p>{category}</p>
+        <p>{mock.category}</p>
 
-        <p>{taste}</p>
+        <p>{mock.taste}</p>
 
-        <p>{producer}</p>
+        <p>{mock.producer}</p>
 
-        <p>{home}</p>
-      </div>
+        <p>{mock.home}</p>
+      </Div>
     </Root>
   );
 }
@@ -60,6 +35,22 @@ const Root = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 90;
+`;
+
+const Div = styled.div`
+  width: 150;
+  height: 200;
+  background-color: "burlywood";
+  border-radius: 10;
+  text-align: "center";
+  padding-top: 40;
+  font-size: 12;
+`;
+
+const Img = styled.div`
+  width: 100;
+  height: "auto";
+  margin-top: 20;
 `;
 
 export default Winebottle;

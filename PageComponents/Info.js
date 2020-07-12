@@ -1,23 +1,15 @@
 import React from "react";
 
-export default function Info({
-  name,
-  category,
-  taste,
-  producer,
-  home,
-  price,
-  url,
-}) {
+export default function Info(wineData) {
   return (
     <div>
-      <p>{name}</p>
-      <p>{category}</p>
-      <p>{taste}</p>
-      <p>{producer}</p>
-      <p>{home}</p>
-      <p>{price}</p>
-      <p>{url}</p>
+      <p>{wineData.name}</p>
+      <p>{wineData.category}</p>
+      <p>{wineData.taste}</p>
+      <p>{wineData.producer}</p>
+      <p>{wineData.home}</p>
+      <p>{wineData.price}</p>
+      <p>{wineData.url}</p>
     </div>
   );
 }

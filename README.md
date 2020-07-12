@@ -85,6 +85,36 @@ JSX に埋め込むスタイルシート情報。
 そして、使いたい js ファイルで import すれば OK。
 （`import style from '../static/Style';`）
 
+## styled-components
+
+参考：https://blog.spacemarket.com/code/introduce_styled_components/
+
+### メリット
+
+簡単に言うと jsx ファイルの中に css を記述することができるようになるライブラリ。
+コンポーネントをよりカプセル化しやすいのが一番のメリット。
+外部 css ファイルではなく jsx ファイルに定義するため、
+そのファイル内で React コンポーネントとレイアウト定義がカプセル化され感覚的にとても扱いやすくなる。
+
+### 使い方
+
+①`npm install --save styled-componets`
+②`import styled from 'styled-components';`
+③ レイアウトを定義
+ex)html の button 要素に style を適用して Button という名前でコンポーネント定義
+`const Button = styled.button`
+`border-radius: 3px;`
+`padding: 0.25em 1em;`
+`margin: 0 1em;`
+`background: transparent;`
+`color: palevioletred;`
+`border: 2px solid palevioletred;`
+`;`
+④render する
+`render(`
+`<button>予約リクエストを送る</button>`
+`);`
+
 ## ルーティング
 
 複雑なアプリケーションでは、事前定義されたパスを使用してルートを定義するだけでは必ずしも十分ではない。
