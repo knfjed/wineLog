@@ -1,18 +1,17 @@
 import React from "react";
-import Header from "../components/Header";
-import TopImage from "./TopImage";
-import Footer from "../components/Footer";
 import styled from "styled-components";
 
-const TopLayout = () => (
-  <Div>
+export default () => (
+  <Root>
     <Header />
+
     <TopImage />
+
     <Footer />
-  </Div>
+  </Root>
 );
 
-const Div = styled.div`
+const Root = styled.div`
   margin: 0;
   background: "beige";
   font-family: "YuMincho";
@@ -20,5 +19,3 @@ const Div = styled.div`
   font-weight: 300;
   color: "lightgray";
 `;
-
-export default TopLayout;
