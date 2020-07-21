@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-export default () => (
-  <Root>
-    <Header />
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import TopImage from "../PageComponents/TopImage";
 
-    <TopImage />
+export default () => {
+  return (
+    <Root>
+      <Header />
 
-    <Footer />
-  </Root>
-);
+      <TopImage />
+
+      <Footer />
+    </Root>
+  );
+};
 
 const Root = styled.div`
   margin: 0;

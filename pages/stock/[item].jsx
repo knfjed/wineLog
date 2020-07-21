@@ -4,37 +4,51 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Info from "../../PageComponents/Info";
 
-const wineData = {
-  date: "2020.",
-  name: "MAKASHIVILI WINE CELLAR KISI",
-  category: "white",
-  taste: "Full body",
-  producer: "VAZIANI COMPANY",
-  home: "Georgia",
-  price: "4000yen",
-  url: "https://wine.com",
-};
+const Item = ({
+  name,
+  category,
+  taste,
+  producer,
+  productionArea,
+  price,
+  url,
+}) => (
+  <Root>
+    <Header />
 
-export default () => {
-  return (
-    <Root>
-      <Header />
+    <WineImage src="/details-wine.jpg" />
 
-      <WineImage src="/details-wine.jpg" />
+    <Info
+      name={name}
+      category={category}
+      taste={taste}
+      producer={producer}
+      productionArea={productionArea}
+      price={price}
+      url={url}
+    />
 
-      <Info
-        name={wineData.name}
-        category={wineData.category}
-        taste={wineData.taste}
-        producer={wineData.producer}
-        home={wineData.home}
-        price={wineData.price}
-        url={wineData.url}
-      />
+    <Footer />
+  </Root>
+);
 
-      <Footer />
-    </Root>
-  );
+Item.getInitialProps = async () => {
+  const space = "ch9w92me3811";
+  const accessToken = "BNy24JRP1S43ycOl1B90rJaPnRxSlAoQOCm_TBnyi_Q";
+
+  const client = contentful.createClient({ space, accessToken });
+
+  const entryId = "7kbsF76DM4UZUtl2F9cT3S";
+  const entry = await client.getEntry(entryId);
+  return {
+    name: entry.fields.name,
+    category: entry.fields.category,
+    taste: entry.fields.taste,
+    producer: entry.fields.producer,
+    productionArea: entry.fields.productionArea,
+    price: entry.fields.price,
+    url: entry.fields.url,
+  };
 };
 
 const Root = styled.div`
@@ -53,3 +67,5 @@ const WineImage = styled.img`
   border-radius: 50%;
   background-position: center;
 `;
+
+export default Item;
