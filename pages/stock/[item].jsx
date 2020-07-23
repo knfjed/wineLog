@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import Info from "../../PageComponents/Info";
 import Layout from "../../components/Layout";
 

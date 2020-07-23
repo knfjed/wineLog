@@ -1,18 +1,15 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import Info from "../../PageComponents/Info";
 
-export default function Winebottle(
-  {
-    // id,
-    // date,
-    // name,
-    // category,
-    // producer,
-    // productionArea,
-  }
-) {
+export default function Winebottle({
+  id,
+  date,
+  name,
+  category,
+  producer,
+  productionArea,
+}) {
   return (
     <Root>
       <date>{date}</date>
@@ -23,13 +20,12 @@ export default function Winebottle(
         </a>
       </Link>
 
-      {/* <Attributes>
+      <Attributes>
         <p>{name}</p>
         <p>{category}</p>
         <p>{producer}</p>
         <p>{productionArea}</p>
-      </Attributes> */}
-      <Info />
+      </Attributes>
     </Root>
   );
 }

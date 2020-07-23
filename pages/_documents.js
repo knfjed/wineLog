@@ -23,12 +23,6 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-
-        <style global jsx>{`
-          body {
-            font-family: "Montserrat", "Raleway", sans-serif;
-          }
-        `}</style>
       </html>
     );
   }
