@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Info from "../../PageComponents/Info";
-import Layout from "../../components/Layout";
+import WineBottle from "../../PageComponents/WineBottle";
 
-const Item = ({
+const Stock = ({
+  date,
   name,
   category,
   taste,
@@ -15,23 +15,22 @@ const Item = ({
   url,
 }) => (
   <Root>
-    <Layout>
-      <WineImage src="/details-wine.jpg" />
-
-      <Info
-        name={name}
-        category={category}
-        taste={taste}
-        producer={producer}
-        productionArea={productionArea}
-        price={price}
-        url={url}
-      />
-    </Layout>
+    <Header />
+    <WineBottle
+      date={date}
+      name={name}
+      category={category}
+      taste={taste}
+      producer={producer}
+      productionArea={productionArea}
+      price={price}
+      url={url}
+    />
+    <Footer />
   </Root>
 );
 
-Item.getInitialProps = async () => {
+Stock.getInitialProps = async () => {
   const space = "ch9w92me3811";
   const accessToken = "BNy24JRP1S43ycOl1B90rJaPnRxSlAoQOCm_TBnyi_Q";
 
@@ -40,6 +39,7 @@ Item.getInitialProps = async () => {
   const entryId = "7kbsF76DM4UZUtl2F9cT3S";
   const entry = await client.getEntry(entryId);
   return {
+    date: entry.fields.date,
     name: entry.fields.name,
     category: entry.fields.category,
     taste: entry.fields.taste,
@@ -50,21 +50,4 @@ Item.getInitialProps = async () => {
   };
 };
 
-const Root = styled.div`
-  margin: 0;
-  background-color: beige;
-  font-family: YuMincho;
-  letter-spacing: 3;
-  font-weight: 300;
-  color: lightgray;
-`;
-
-const WineImage = styled.img`
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-position: center;
-`;
-
-export default Item;
+export default Stock;
