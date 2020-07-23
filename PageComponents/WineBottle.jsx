@@ -38,7 +38,7 @@ const Root = styled.div`
 `;
 
 const Attributes = styled.div`
-  width: 150px;
+  width: 120px;
   height: 200px;
   background-color: burlywood;
   border-radius: 10px;
@@ -48,7 +48,8 @@ const Attributes = styled.div`
 `;
 
 const WineBottleImage = styled.img`
-  width: 100;
+  margin-bottom: -10px;
+  width: 100px;
   height: auto;
   margin-top: 20;
 `;

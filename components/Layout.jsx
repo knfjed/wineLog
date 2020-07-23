@@ -1,13 +1,28 @@
 import React from "react";
+import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
+import styled from "styled-components";
 
-export default function Layout({ children }) {
-  return (
-    <>
-      <Header />
-      {children}
-      <Footer />
-    </>
-  );
-}
+export default ({ children }) => (
+  <Root>
+    <Head>
+      <title>WINE手帳</title>
+    </Head>
+
+    <Header />
+
+    {children}
+
+    <Footer />
+  </Root>
+);
+
+const Root = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  font-family: "YuMincho";
+  letter-spacing: 3;
+  font-weight: 300;
+`;

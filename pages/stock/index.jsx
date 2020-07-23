@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Layout from "../../components/Layout";
 import WineBottle from "../../PageComponents/WineBottle";
 
 const BASE_URL = "https://cdn.contentful.com";
@@ -15,49 +14,22 @@ export default function Index({ contentful }) {
 
   return (
     <Root>
-      <Header />
-
-      <Bottles>
-        {/* {Index.map(
-          ({ id, date, name, category, producer, productionArea }, i) => (
-            <WineBottle
-              key={`wine-bottle-${i}`}
-              id={id}
-              date={date}
-              name={name}
-              category={category}
-              producer={producer}
-              productionArea={productionArea}
-            />
-          )
-        )} */}
-      </Bottles>
-
-      <Footer />
+      <Layout>
+        <WineBottle />
+      </Layout>
     </Root>
   );
 }
 
 export async function getStaticProps() {
   const contentful = await fetch(
-    // `${BASE_URL}/spaces/${process.env.SPACE_ID}/environments/${process.env.ENVIRONMENT_NAME}/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}&content_type=${process.env.CONTENT_TYPE}`
     `${BASE_URL}/spaces/${SPACE_ID}/environments/${ENVIRONMENT_NAME}/entries?access_token=${CONTENTFUL_ACCESS_TOKEN}&content_type=${CONTENT_TYPE}`
   );
 
   return { props: { contentful: await contentful.json() } };
 }
 
-const Root = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  background: beige;
-  font-family: YuMincho;
-  letter-spacing: 3;
-  font-weight: 300;
-  color: lightgray;
-`;
-
-const Bottles = styled.div`
+const WineBottle = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;

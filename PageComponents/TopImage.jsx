@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Topic from "./Topic";
+import Topic from "./Topics";
 
 export default function TopImage() {
   return (

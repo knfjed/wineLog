@@ -9,8 +9,12 @@ export default function NavigationBar() {
         <Content>TOP</Content>
       </Link>
 
-      <Link href="/stock">
-        <Content>STOCK</Content>
+      <Link href="/list">
+        <Content>LIST</Content>
+      </Link>
+
+      <Link href="/item">
+        <Content>WINE</Content>
       </Link>
 
       <Link href="/contact">
@@ -21,7 +25,7 @@ export default function NavigationBar() {
 }
 
 const Content = styled.div`
-  margin-right: 15;
+  margin-right: 30px;
   text-decoration: none;
   color: "black";
 `;

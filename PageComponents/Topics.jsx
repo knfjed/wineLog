@@ -6,13 +6,13 @@ export default function Topics() {
     <Root>
       <Topic>
         <date>2020.6.30</date>
-        <img src="/wineIcon.svg"></img>
+        <Icon src="/wineIcon.svg" />
         <h4>新しいワインが追加されました！</h4>
       </Topic>
 
       <Topic>
         <date>2020.6.30</date>
-        <img src="/likeIcon.svg"></img>
+        <Icon src="/likeIcon.svg" />
         <h4>いいね！されました</h4>
       </Topic>
 
@@ -35,7 +35,7 @@ const Root = styled.div`
 const Topic = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin: 20px, 20px;
   font-weight: 200;
   font-size: 16px;
 `;
