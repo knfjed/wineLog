@@ -11,4 +11,5 @@ export default function Footer() {
 
 const Root = styled.div`
   text-align: center;
+  letter-spacing: 2px;
 `;

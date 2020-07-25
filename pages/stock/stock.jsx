@@ -16,6 +16,9 @@ export default function Index({ contentful }) {
     <Root>
       <Layout>
         <WineBottle />
+        <WineBottle />
+        <WineBottle />
+        <WineBottle />
       </Layout>
     </Root>
   );

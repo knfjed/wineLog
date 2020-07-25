@@ -14,9 +14,9 @@ export default class MyDocument extends Document {
             href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;600&family=Raleway:wght@100;300;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
             rel="stylesheet"
-          />
+          ></link>
         </Head>
 
         <body>

@@ -17,36 +17,39 @@ const Item = ({
       <WineImage src="/details-wine.jpg" />
 
       <Info
-        name={name}
-        category={category}
-        taste={taste}
-        producer={producer}
-        productionArea={productionArea}
-        price={price}
-        url={url}
+      // name={name}
+      // category={category}
+      // taste={taste}
+      // producer={producer}
+      // productionArea={productionArea}
+      // price={price}
+      // url={url}
       />
     </Layout>
   </Root>
 );
 
-Item.getInitialProps = async () => {
-  const space = "ch9w92me3811";
-  const accessToken = "BNy24JRP1S43ycOl1B90rJaPnRxSlAoQOCm_TBnyi_Q";
+// Item.getInitialProps = async () => {
+//   const contentful = require("contentful");
 
-  const client = contentful.createClient({ space, accessToken });
+//   const space = "ch9w92me3811";
+//   const accessToken = "BNy24JRP1S43ycOl1B90rJaPnRxSlAoQOCm_TBnyi_Q";
 
-  const entryId = "7kbsF76DM4UZUtl2F9cT3S";
-  const entry = await client.getEntry(entryId);
-  return {
-    name: entry.fields.name,
-    category: entry.fields.category,
-    taste: entry.fields.taste,
-    producer: entry.fields.producer,
-    productionArea: entry.fields.productionArea,
-    price: entry.fields.price,
-    url: entry.fields.url,
-  };
-};
+//   const client = contentful.createClient({ space, accessToken });
+
+//   const entryId = "7kbsF76DM4UZUtl2F9cT3S";
+//   const entry = await client.getEntry(entryId);
+
+//   return {
+//     name: entry.fields.name,
+//     category: entry.fields.category,
+//     taste: entry.fields.taste,
+//     producer: entry.fields.producer,
+//     productionArea: entry.fields.productionArea,
+//     price: entry.fields.price,
+//     url: entry.fields.url,
+//   };
+// };
 
 const Root = styled.div`
   margin: 0;
@@ -54,13 +57,13 @@ const Root = styled.div`
   font-family: YuMincho;
   letter-spacing: 3;
   font-weight: 300;
-  color: lightgray;
+  color: black;
 `;
 
 const WineImage = styled.img`
   display: inline-block;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background-position: center;
 `;
