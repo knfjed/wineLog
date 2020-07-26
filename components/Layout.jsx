@@ -19,10 +19,14 @@ export default ({ children }) => (
 );
 
 const Root = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   background: white;
   font-family: "YuMincho";
   letter-spacing: 3;
   font-weight: 300;
 `;
+
+// const Head = styled.div`
+//   margin: 0;
+// `;

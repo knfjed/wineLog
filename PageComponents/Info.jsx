@@ -4,7 +4,7 @@ export default function Info({
   name,
   category,
   producer,
-  productionArea,
+  // productionArea,
   price,
   url,
 }) {
@@ -13,7 +13,7 @@ export default function Info({
       <p>{name}</p>
       <p>{category}</p>
       <p>{producer}</p>
-      <p>{productionArea}</p>
+      {/* <p>{productionArea}</p> */}
       <p>{price}</p>
       <p>{url}</p>
     </div>

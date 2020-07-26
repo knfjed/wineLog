@@ -9,16 +9,16 @@ export default function NavigationBar() {
         <Content>TOP</Content>
       </Link>
 
-      <Link href="/list">
-        <Content>LIST</Content>
+      <Link href="/concept">
+        <Content>CONCEPT</Content>
       </Link>
 
-      <Link href="/item">
-        <Content>WINE</Content>
+      <Link href="/stock/stock">
+        <Content>STOCK</Content>
       </Link>
 
-      <Link href="/contact">
-        <Content>CONTACT</Content>
+      <Link href="/aboutMe">
+        <Content>ABOUT ME</Content>
       </Link>
     </Nav>
   );
@@ -39,8 +39,8 @@ const Content = styled.div`
   display: inline-block;
   padding: 0.5em 1em;
   background: #f7f7f7;
-  border-left: solid 6px #ff7c5c; /*左線*/
-  color: #ff7c5c; /*文字色*/
+  border-left: solid 6px #a6d3c8; /*左線*/
+  color: dimgray; /*文字色*/
   letter-spacing: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   margin-left: 20px;

@@ -14,8 +14,8 @@ export default function Header() {
 }
 
 const Root = styled.header`
-  margin-left: 16px;
-  margin-top: 0;
+  padding-left: 16px;
+  margin: 0;
 `;
 
 const Logo = styled.h1`

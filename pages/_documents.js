@@ -5,7 +5,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="ja">
         <Head>
-          <meta name="description" content="A site for programming portfolio" />
+          <meta name="description" content="WINE手帳" />
           <meta charset="utf-8" />
           <meta name="robots" content="noindex, nofollow" />
           <meta name="viewport" content="width=device-width" />
@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
             rel="stylesheet"
           ></link>
+          <title>WINE手帳</title>
         </Head>
 
         <body>

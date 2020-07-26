@@ -24,11 +24,19 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
+    "/aboutMe": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/concept": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/stock/[item]": [
+    "/stock/stock": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
