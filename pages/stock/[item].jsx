@@ -1,7 +1,5 @@
 import React from "react";
-// import { useRouter } from "next/router";
 import styled from "styled-components";
-// import Info from "../../PageComponents/Info";
 import Layout from "../../components/Layout";
 
 export default function Item({
@@ -56,49 +54,6 @@ Item.getInitialProps = async () => {
     url: entry.fields.url,
   };
 };
-
-// const BASE_URL = "https://cdn.contentful.com";
-// const SPACE_ID = "ch9w92me3811";
-// const ENVIRONMENT_NAME = "master";
-// const CONTENT_TYPE = "wineData";
-// const CONTENTFUL_ACCESS_TOKEN = "q0h55-2EFD2NnujZdCaI-dCFGljZR4Bj99YpkvPUYOE";
-
-// export default class Item extends Component {
-//   static async getInitialProps() {
-//     const contentful = await fetch(
-//       `${BASE_URL}/spaces/${SPACE_ID}/environments/${ENVIRONMENT_NAME}/entries?access_token=${CONTENTFUL_ACCESS_TOKEN}&content_type=${CONTENT_TYPE}`
-//     );
-//     const data = await contentful.json();
-
-//     return { wineData: data };
-//   }
-
-//   render() {
-//     const { wineData } = this.props;
-//     console.log("wineData.item[0].category:", wineData.items[0].category);
-
-//     return (
-//       <Root>
-//         <Layout>
-//           <WineImage
-//             src={wineData.items[`${id}`].package}
-//             alt={wineData.items[`${id}`].name}
-//           />
-
-//           <Info
-//             name={wineData.items[`${id}`].name}
-//             category={wineData.category}
-//             taste={wineData.taste}
-//             producer={wineData.producer}
-//             // productionArea={productionArea}
-//             price={wineData.price}
-//             url={wineData.url}
-//           />
-//         </Layout>
-//       </Root>
-//     );
-//   }
-// }
 
 const Root = styled.div`
   margin: 0;
