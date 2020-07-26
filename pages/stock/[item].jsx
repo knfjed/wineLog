@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../../components/Layout";
+import Contentful from "../../lib/contentful";
 
 export default function Item({
   id,
@@ -13,6 +14,17 @@ export default function Item({
   url,
   packageImg,
 }) {
+  console.log("contentful", {
+    id,
+    name,
+    category,
+    taste,
+    producer,
+    productionArea,
+    price,
+    url,
+    packageImg,
+  });
   return (
     <Root>
       <Layout>
@@ -33,27 +45,20 @@ export default function Item({
   );
 }
 
-Item.getInitialProps = async () => {
-  const contentful = require("contentful");
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true,
+  };
+}
 
-  const space = "ch9w92me3811";
-  const accessToken = "BNy24JRP1S43ycOl1B90rJaPnRxSlAoQOCm_TBnyi_Q";
-
-  const client = contentful.createClient({ space, accessToken });
-
-  const entryId = "7kbsF76DM4UZUtl2F9cT3S";
-  const entry = await client.getEntry(entryId);
+export async function getStaticProps({ params }) {
+  const contentful = new Contentful();
 
   return {
-    name: entry.fields.name,
-    category: entry.fields.category,
-    taste: entry.fields.taste,
-    producer: entry.fields.producer,
-    productionArea: entry.fields.productionArea,
-    price: entry.fields.price,
-    url: entry.fields.url,
+    props: await contentful.getWine(params.item),
   };
-};
+}
 
 const Root = styled.div`
   margin: 0;
